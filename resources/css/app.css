@@ -1,0 +1,93 @@
+header{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 2.5vw;
+    box-sizing: border-box;
+    background-color: #f71721;
+    height: 7vw;
+}
+#buscar{
+    height: 2vw;
+    width: 30vw;
+    border-radius: 0.8vw;
+    border: 0.1vw solid black;
+    padding: 0 1vw;
+    box-sizing: border-box;
+    font-size: 1vw;
+}
+.login a{
+    margin-right: 2vw;
+    font-size: 1vw;
+    text-decoration: none;
+    color: black;
+    border: 0.1vw solid black;
+    padding: 0.2vw 0.4vw;
+    box-sizing: border-box;
+}
+.login a:nth-child(2){
+    background-color: black;
+    color: white;
+}
+.logo{
+    font-size: 1.6vw;
+}
+.ocultar{
+    position: absolute;
+    height: 40vw;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+}
+.form{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    gap: 2vw;
+    z-index: 999;
+    background-color: antiquewhite;
+    width: 17vw;
+    height: 20vw;
+    padding: 1vw 0;
+
+}
+#titulo{
+    color: rgb(0, 0, 0);
+    letter-spacing: 0.3vw;
+    font-size: 1.4vw;
+    user-select: none;
+}
+.form input{
+    height: 1.6vw;
+    width: 12vw;
+    background-color: transparent;
+    border: 0.1vw solid black;
+    padding-left: 1.5vw;
+    box-sizing: border-box;
+    font-size: 0.8vw;
+}
+#boton{
+    height: 1.4vw;
+    width: 9vw;
+    background-color: black;
+    color: white;
+    font-size: 0.8vw;
+    padding: 0vw;
+    border-radius: 0.3vw;
+}
+.nombre,.email{
+    position: relative;
+}
+.user,.emailimg{
+    position: absolute;
+    top: 0.5vw;
+    left: 0.3vw;
+    height: 0.7vw;
+    width: 1vw;
+}
+
