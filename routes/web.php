@@ -17,4 +17,8 @@ use Illuminate\Support\Facades\Route;
 
 Route::get('/', [UserController::class, 'animation']);
 
+Route::post('/Login', [UserController::class, 'login'])->name('login');
+
+Route::post('/Registro', [UserController::class, 'registro'])->name('registro');
+
 Route::resource('/Pagina|Principal',UserController::class);

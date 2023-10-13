@@ -10,7 +10,8 @@
 </head>
 
 <body>
-    @vite('resources/css/app.css','resources/js/app.js')
+    @vite('resources/css/app.css', 'resources/js/app.js')
+    @yield('headerTop')
     <header>
         <h1 class="logo">LOGO</h1>
         <nav class="login">
@@ -20,6 +21,7 @@
     </header>
 
     @yield('content')
+
 </body>
 
 </html>

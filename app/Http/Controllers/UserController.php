@@ -3,7 +3,9 @@
 namespace App\Http\Controllers;
 
 use App\Http\Requests\GamesRequest;
+use App\Http\Requests\UserRequest;
 use App\Models\Games;
+use App\Models\Rol;
 use App\Models\User;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
@@ -14,7 +16,17 @@ class UserController extends Controller
         return view('animation.animacion');
     }
     public function index(){
-        return view('index');
+        $rol = Rol::all();
+        return view('index', compact('rol'));
+    }
+    public function registro(UserRequest $request){
+
+        $user = User::create($request->all());
+
+        return redirect()->route('Pagina|Principal.index')->with([
+            'success' , '¡Te has registrado Exitosamente! 🎁😁'
+        ]);
+
     }
     public function login(Request $request){
 
