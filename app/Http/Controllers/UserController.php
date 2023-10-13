@@ -16,16 +16,21 @@ class UserController extends Controller
         return view('animation.animacion');
     }
     public function index(){
-        $rol = Rol::all();
-        return view('index', compact('rol'));
+        return view('index');
     }
+
+    public function pagRegis(){
+        $rol = Rol::all();
+        return view('registro', compact('rol'));
+    }
+
     public function registro(UserRequest $request){
 
         $user = User::create($request->all());
 
-        return redirect()->route('Pagina|Principal.index')->with([
+        return redirect()->route('Pagina|Principal.index')->with(
             'success' , '¡Te has registrado Exitosamente! 🎁😁'
-        ]);
+        );
 
     }
     public function login(Request $request){

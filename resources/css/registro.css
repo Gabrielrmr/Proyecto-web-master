@@ -1,0 +1,58 @@
+body {
+    font-family: Arial, sans-serif;
+    background-image:url("/public/images/mario.jpeg");
+    text-align: center;
+    margin: 0;
+    padding: 0;
+}
+
+.registro-form {
+    position: relative;
+    top:75px;
+    background-color: #fff;
+    width: 330px;
+    margin: 0 auto;
+    padding: 20px;
+    border: 1px solid #ccc;
+    border-radius: 20px;
+    box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);
+}
+
+::placeholder{
+    color:rgb(0, 0, 0);
+}
+select{
+    width: 106%;
+    position: relative;
+    padding: 10px;
+    margin-bottom: 20px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    right:10px;
+}
+input[type="text"],
+input[type="email"],
+input[type="password"] {
+    width: 100%;
+    position: relative;
+    padding: 10px;
+    margin-bottom: 20px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    right:10px;
+    color: white;
+
+}
+
+input[type="submit"] {
+    background-color: #007BFF;
+    color: #fff;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+input[type="submit"]:hover {
+    background-color: #0056b3;
+}

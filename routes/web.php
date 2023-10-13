@@ -19,6 +19,7 @@ Route::get('/', [UserController::class, 'animation']);
 
 Route::post('/Login', [UserController::class, 'login'])->name('login');
 
+Route::get('/Registro', [UserController::class, 'pagRegis'])->name('pagRegis');
 Route::post('/Registro', [UserController::class, 'registro'])->name('registro');
 
 Route::resource('/Pagina|Principal',UserController::class);
