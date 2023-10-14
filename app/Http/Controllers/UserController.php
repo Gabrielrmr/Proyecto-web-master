@@ -4,7 +4,9 @@ namespace App\Http\Controllers;
 
 use App\Http\Requests\GamesRequest;
 use App\Http\Requests\UserRequest;
+use App\Models\Categories;
 use App\Models\Games;
+use App\Models\Platforms;
 use App\Models\Rol;
 use App\Models\User;
 use Illuminate\Http\Request;
@@ -36,7 +38,7 @@ class UserController extends Controller
     public function login(Request $request){
 
         $credential = $request->validate([
-            'fullname' => 'required',
+            'email' => 'required',
             'password' => 'required'
         ],
         [
@@ -46,10 +48,11 @@ class UserController extends Controller
         if (Auth::attempt($credential)) {
             $request->session()->regenerate();
 
-            return redirect()->route('')->with('success' , 'Haz Iniciado sesion correctamente');
+
+            return redirect()->route('juegos')->with('success' , 'Haz Iniciado sesion correctamente 🎁😁');
         }
         return back()->withErrors([
-            'fullname' => 'Usuario o contraseña incorrecta',
+            'email' => 'Usuario o contraseña incorrecta',
             'password' => 'Usuario o contraseña incorrecta'
         ]);
 
@@ -69,5 +72,14 @@ class UserController extends Controller
 
     }
 
+    public function show(){
+        $juegos = Games::all();
+        return view('juegos',compact('juegos'));
+    }
+
+    public function infoGames($item){
+        $juegos = Games::find($item);
+        return view('infoGames',compact('juegos'));
+    }
 
 }

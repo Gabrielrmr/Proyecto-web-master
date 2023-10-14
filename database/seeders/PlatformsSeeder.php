@@ -16,5 +16,9 @@ class PlatformsSeeder extends Seeder
         $platform = new Platforms();
         $platform->name = "Play Station";
         $platform->save();
+
+        $platform = new Platforms();
+        $platform->name = "Nintendo";
+        $platform->save();
     }
 }

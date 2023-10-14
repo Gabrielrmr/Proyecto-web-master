@@ -22,4 +22,8 @@ Route::post('/Login', [UserController::class, 'login'])->name('login');
 Route::get('/Registro', [UserController::class, 'pagRegis'])->name('pagRegis');
 Route::post('/Registro', [UserController::class, 'registro'])->name('registro');
 
+Route::get('/Juegos', [UserController::class, 'show'])->name('juegos');
+
+Route::get('/infoGames/{item}', [UserController::class, 'infoGames'])->name('infoGames');
+
 Route::resource('/Pagina|Principal',UserController::class);

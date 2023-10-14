@@ -15,8 +15,10 @@ return new class extends Migration
     {
         Schema::create('games', function (Blueprint $table) {
             $table->id();
+            $table->string('name');
             $table->foreignIdFor(Platforms::class)->constrained();
             $table->foreignIdFor(Categories::class)->constrained();
+            $table->text('descripcion');
             $table->string('cover',64);
             $table->date('year');
             $table->timestamps();

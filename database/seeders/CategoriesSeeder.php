@@ -14,7 +14,11 @@ class CategoriesSeeder extends Seeder
     public function run(): void
     {
         $categoria = new Categories();
-        $categoria->name = "VELOCIDAD";
+        $categoria->name = "AVENTURA";
+        $categoria->save();
+
+        $categoria = new Categories();
+        $categoria->name = "FUTBOL";
         $categoria->save();
     }
 }
