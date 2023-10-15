@@ -60,7 +60,9 @@ class UserController extends Controller
 
     public function regisGames(){
         $juegos = Games::all();
-        return view('regisGames', compact('juegos'));
+        $categories = Categories::all();
+        $platforms = Platforms::all();
+        return view('regisGames', compact('juegos','categories','platforms'));
     }
 
     public function store(GamesRequest $request){

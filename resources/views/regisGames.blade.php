@@ -12,10 +12,10 @@
 
         <select name="platforms_id" id="">
             <option value="" selected hidden>Seleccione la plataforma</option>
-            @foreach ($juegos as $item)
-                <option value="{{ $item->platforms->id }}"
-                    {{ old('platforms_id') == $item->platforms->id ? 'selected' : '' }}>
-                    {{ $item->platforms->name }}
+            @foreach ($platforms as $item)
+                <option value="{{ $item->id }}"
+                    {{ old('platforms_id') == $item->id ? 'selected' : '' }}>
+                    {{ $item->name }}
                 </option>
             @endforeach
         </select>
@@ -25,10 +25,10 @@
 
         <select name="categories_id" id="">
             <option value="" selected hidden>Seleccione la categoria</option>
-            @foreach ($juegos as $item)
-                <option value="{{ $item->categories->id }}"
-                    {{ old('categories_id') == $item->categories->id ? 'selected' : '' }}>
-                    {{ $item->categories->name }}
+            @foreach ($categories as $item)
+                <option value="{{ $item->id }}"
+                    {{ old('categories_id') == $item->id ? 'selected' : '' }}>
+                    {{ $item->name }}
                 </option>
             @endforeach
         </select>
