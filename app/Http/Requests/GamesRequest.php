@@ -22,7 +22,9 @@ class GamesRequest extends FormRequest
     public function rules(): array
     {
         return [
-            'plataforms_id' => 'required',
+            'platforms_id' => 'required',
+            'name' => 'required',
+            'descripcion' => 'required',
             'categories_id' => 'required',
             'cover' => 'required|unique:games,cover',
             'year' => 'required',

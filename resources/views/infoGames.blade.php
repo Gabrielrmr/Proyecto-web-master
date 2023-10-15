@@ -16,7 +16,7 @@
                 <p>{{ $juegos->platforms->name }}</p>
             </div>
             <div id="flex">
-                <a href=""><img id="imgBorrar" src="/images/imgBorrar.png"></a>
+                <a href="{{route('destroy', $juegos)}}"><img id="imgBorrar" src="/images/imgBorrar.png"></a>
                 <a href=""><img id="imgEditar" src="/images/imgEditar.png"></a>
             </div>
         </div>

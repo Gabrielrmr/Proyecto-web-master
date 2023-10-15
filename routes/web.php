@@ -26,4 +26,8 @@ Route::get('/Juegos', [UserController::class, 'show'])->name('juegos');
 
 Route::get('/infoGames/{item}', [UserController::class, 'infoGames'])->name('infoGames');
 
+Route::get('/eliminando/{juegos}', [UserController::class, 'destroy'])->name('destroy');
+
+Route::get('/Registrar Juegos', [UserController::class, 'regisGames'])->name('regisGames');
+
 Route::resource('/Pagina|Principal',UserController::class);

@@ -57,17 +57,29 @@ class UserController extends Controller
         ]);
 
     }
+
+    public function regisGames(){
+        $juegos = Games::all();
+        return view('regisGames', compact('juegos'));
+    }
+
     public function store(GamesRequest $request){
 
         $foto = $request->file('cover');
         $nombreFoto = time() . '.' . $foto->getClientOriginalExtension();
-        $foto->move(public_path('/games/images'), $nombreFoto);
+        $foto->move(public_path('games/images/'), $nombreFoto);
 
-        $games = Games::create($request->all());
-        $games->cover = $nombreFoto;
+        $juego = new Games();
+        $juego->name =  $request->name;
+        $juego->platforms_id = $request->platforms_id;
+        $juego->cover = $nombreFoto;
+        $juego->categories_id =$request->categories_id;
+        $juego->year = $request->year;
+        $juego->descripcion = $request->descripcion;
+        $juego->save();
 
-        return redirect()->route('Pagina|Principal.show')->with([
-            'success' , 'Tu Juego se ha cargado Exitosamente'
+        return redirect()->route('juegos')->with([
+            'success' , 'Tu Juego se ha cargado Exitosamente. 😎👍'
         ]);
 
     }
@@ -80,6 +92,11 @@ class UserController extends Controller
     public function infoGames($item){
         $juegos = Games::find($item);
         return view('infoGames',compact('juegos'));
+    }
+
+    public function destroy(Games $juegos){
+        $juegos->delete();
+        return redirect()->route('juegos')->with('success', 'El juego se eliminó correctamente 😎👍');
     }
 
 }
