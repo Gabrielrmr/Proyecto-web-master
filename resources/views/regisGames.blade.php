@@ -36,7 +36,7 @@
             <small style="color: red">*{{ $message }}</small>
         @enderror
 
-        <input type="file" name="cover" id="archivo">
+        <input type="file" name="cover" id="archivo" value="{{$juego->cover}}">
 
         @if (old('archivo'))
             <p>Archivo anteriormente cargado: {{ old('archivo') }}</p>

@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Http\Requests\FotoRequest;
 use App\Http\Requests\GamesRequest;
 use App\Http\Requests\UserRequest;
 use App\Models\Categories;
@@ -109,24 +110,26 @@ class UserController extends Controller
         return view('editar', compact('juego','categories','platforms'));
     }
 
-    public function update(Request $request, $item){
+    public function update(FotoRequest $request, $item){
         $juego = Games::find($item);
-
-        if($request->hasfile('cover')){
-        $foto = $request->file('cover');
-        $nombreFoto = time() . '.' . $foto->getClientOriginalExtension();
-        $foto->move(public_path('games/images/'), $nombreFoto);
-
         $juego->name =  $request->name;
         $juego->platforms_id = $request->platforms_id;
-        $juego->cover = $nombreFoto;
         $juego->categories_id =$request->categories_id;
         $fecha_formateada = date('Y-m-d', strtotime($request->year));
         $juego->year = $fecha_formateada;
         $juego->descripcion = $request->descripcion;
-        $juego->save();
-        return redirect()->route('juegos');
+
+        if($request->hasfile('cover')){
+            $foto = $request->file('cover');
+            $nombreFoto = time() . '.' . $foto->getClientOriginalExtension();
+            $foto->move(public_path('games/images/'), $nombreFoto);
+            $juego->cover = $nombreFoto;
         }
-    }
+
+        $foto = $juego->cover;
+        $juego->cover = $foto;
+        $juego->save();
+    return redirect()->route('juegos');
+}
 
 }

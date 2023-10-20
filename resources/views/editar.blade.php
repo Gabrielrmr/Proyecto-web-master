@@ -15,8 +15,9 @@
        <img id="imgJuego" src="{{asset('games/images/'. $juego->cover)}}" alt="">
        <label id="txtCambiarImg" for="file">Cambiar Imagen:</label>
        <input type="file" name="cover" id="file">
-       <!--<img for="file" src="imgEditar.png" id="btnCambiarImg">-->
-
+       @error('cover')
+            <small>{{$message}}</small>
+       @enderror
        <label id="txtCategoria" for="slcCategorias">Categoria:</label><br>
        <select name="categories_id" id="slcCategorias">
         @foreach ($categories as $item)
@@ -27,6 +28,9 @@
             @endif
         @endforeach
     </select>
+    @error('categories_id')
+        <small>{{$message}}</small>
+    @enderror
        <label id="txtPlataforma" for="slcPlataforma">Plataforma:</label><br>
        <select name="platforms_id" id="slcPlataforma">
         @foreach ($platforms as $item)
@@ -37,11 +41,20 @@
             @endif
         @endforeach
     </select>
-    <textarea name="descripcion" id="" cols="20" rows="5">{{$juego->descripcion}}</textarea>
+    @error('platforms_id')
+        <small>{{$message}}</small>
+    @enderror
+    <textarea name="descripcion" id="" cols="20" rows="5">{{old('descripcion',$juego->descripcion)}}</textarea>
        <h4 id="txtNombre">Nombre: </h4>
-       <input id="iptNombre" name="name" value="{{$juego->name}}"  {{old('name')}} type="text">
+       <input id="iptNombre" name="name" value="{{old('name',$juego->name)}}" type="text">
+       @error('name')
+            <small>{{$message}}</small>
+       @enderror
        <h4 id="txtAño">Año de Lanzamiento: </h4>
-       <input id="iptAño"  type="date" name="year" value="{{$juego->year}}">
+       <input id="iptAño"  type="date" name="year" value="{{old('year',$juego->year)}}">
+       @error('year')
+            <small>{{$message}}</small>
+       @enderror
        <button type="submit" id="btnEditar">Editar Juego</button>
     </div>
 </form>
