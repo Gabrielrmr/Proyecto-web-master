@@ -13,9 +13,9 @@
         @enderror
         <input type="submit" value="Enviar">
     </form>
-    @if (session('success'))
+    {{-- @if (session('success'))
         <script>
             alert('{{ session('success') }}');
         </script>
-    @endif
+    @endif --}}
 @endsection

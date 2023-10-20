@@ -30,4 +30,7 @@ Route::get('/eliminando/{juegos}', [UserController::class, 'destroy'])->name('de
 
 Route::get('/Registrar Juegos', [UserController::class, 'regisGames'])->name('regisGames');
 
+Route::get("Actualizar Registro/{user}/edit", [UserController::class, "edit"])->name("actualizar");
+Route::put("Actualizar Registro/{user}/edit", [UserController::class, "update"])->name("update");
+
 Route::resource('/Pagina|Principal',UserController::class);

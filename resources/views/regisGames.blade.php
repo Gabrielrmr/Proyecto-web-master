@@ -45,7 +45,7 @@
             <small style="color: red">*{{ $message }}</small>
         @enderror
 
-        <input type="text" name="year" placeholder="year" value="{{ old('year') }}">
+        <input type="date" name="year" placeholder="year" value="{{ old('year') }}">
         @error('year')
             <small style="color: red">*{{ $message }}</small>
         @enderror

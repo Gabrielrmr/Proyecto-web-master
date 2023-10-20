@@ -1,0 +1,101 @@
+body{
+    background-color: rgba(253, 235, 235, 0.42);
+}
+.divEditar{
+    margin: auto;
+    width: 60%;
+    height: 500px;
+    min-height: 500px;
+    box-shadow: 2px 5px 5px 2px rgba(96, 96, 96, 0.5);
+    border-radius: 20px 20px 20px 20px;
+    background-color: white;
+    border: 1px solid rgba(202, 200, 200, 0.5);
+    margin-top: 7%;
+    margin-bottom: 2%;
+    padding: 2%;
+}
+.divEditar img{
+    width:60%;
+    height: 50%;
+    min-width: 300px;
+    z-index: 100%;
+    border-radius: 20px 20px 20px 20px;
+    transform: translate(0%,50%);
+}
+.divEditar select{
+    height: 40px;
+    width: 200px;
+    border-color: red;
+    border-radius: 10px;
+}
+.divEditar label{
+    height: 20px;
+}
+#slcCategorias{
+    transform: translate(282%,-910%);
+}
+#slcPlataforma{
+    transform: translate(282%,-705%);
+}
+/*#btnCambiarImg{
+    z-index: 100%;
+    cursor: pointer;
+    width: 20px;
+    height: 20px;
+    min-width: 20px;
+    transform: translate(-150%,750%);
+}*/
+#txtCategoria{
+    float: right;
+    margin-right: 278px;
+    margin-top: -400px; 
+    z-index: 100%;   
+}
+#txtPlataforma{
+    float: right;
+    margin-right: 270px; 
+    margin-top: -280px; 
+    z-index: 100%; 
+}
+#txtCambiarImg{
+   float: right;
+   margin-top: 130px;
+   margin-right: 790px;
+}
+#file{
+    border-radius: 0;
+    transform: translate(-200%,425%);
+}
+.divEditar h4{
+    font-weight: lighter;
+}
+.divEditar input{
+    border-color: red;
+    width: 200px;
+    border-radius: 10px;
+    height: 40px;
+}
+#txtNombre{
+    float: right;
+    transform: translate(-500%,-1160%);
+}
+#iptNombre{
+    transform: translate(175%,-350%);
+}
+#txtAño{
+    float: right;
+    transform: translate(-106%,-480%);
+}
+#iptAño{
+    transform: translate(74%,-55%);
+}
+#btnEditar{
+    width: 200px;
+    background-color: red;
+    border-color: black;
+    border-radius: 10px;
+    height: 40px;
+    color: white;
+    font-weight: bold;
+    transform: translate(100%,-160%);
+}

@@ -76,7 +76,8 @@ class UserController extends Controller
         $juego->platforms_id = $request->platforms_id;
         $juego->cover = $nombreFoto;
         $juego->categories_id =$request->categories_id;
-        $juego->year = $request->year;
+        $fecha_formateada = date('Y-m-d', strtotime($request->year));
+        $juego->year = $fecha_formateada;
         $juego->descripcion = $request->descripcion;
         $juego->save();
 
@@ -99,6 +100,33 @@ class UserController extends Controller
     public function destroy(Games $juegos){
         $juegos->delete();
         return redirect()->route('juegos')->with('success', 'El juego se eliminó correctamente 😎👍');
+    }
+
+    public function edit( $item){
+        $juego = Games::find($item);
+        $categories = Categories::all();
+        $platforms = Platforms::all();
+        return view('editar', compact('juego','categories','platforms'));
+    }
+
+    public function update(Request $request, $item){
+        $juego = Games::find($item);
+
+        if($request->hasfile('cover')){
+        $foto = $request->file('cover');
+        $nombreFoto = time() . '.' . $foto->getClientOriginalExtension();
+        $foto->move(public_path('games/images/'), $nombreFoto);
+
+        $juego->name =  $request->name;
+        $juego->platforms_id = $request->platforms_id;
+        $juego->cover = $nombreFoto;
+        $juego->categories_id =$request->categories_id;
+        $fecha_formateada = date('Y-m-d', strtotime($request->year));
+        $juego->year = $fecha_formateada;
+        $juego->descripcion = $request->descripcion;
+        $juego->save();
+        return redirect()->route('juegos');
+        }
     }
 
 }

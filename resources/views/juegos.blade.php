@@ -22,14 +22,14 @@
                     <p>descripcion <a href="{{ route('infoGames', $item) }}" id="descripcion">Leer mas...</a></p>
                     <div id="flex">
                         <a href="{{route('destroy', $item)}}"><img id="imgBorrar" src="/images/imgBorrar.png"></a>
-                        <a href=""><img id="imgEditar" src="/images/imgEditar.png"></a>
+                        <a href="{{route('actualizar', $item)}}"><img id="imgEditar" src="/images/imgEditar.png"></a>
                     </div>
                 </div>
             @endforeach
         </div>
-        @if (session('success'))
+{{--         @if (session('success'))
             <script>
                 alert('{{ session('success') }}');
             </script>
-        @endif
+        @endif --}}
     @endsection
