@@ -15,7 +15,7 @@
     <header>
         <h1 class="logo">LOGO</h1>
         <nav class="login">
-            <a href="">Iniciar Sesion</a>
+            <a href="{{route('login')}}">Iniciar Sesion</a>
             <a href="{{route('pagRegis')}}">Registrarse</a>
         </nav>
     </header>

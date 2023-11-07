@@ -2,10 +2,16 @@
 
 @section('content')
 
-    <body>
+<body>
+    @vite('resources/css/style.css')
+    
+    <div class="logout">
         <strong>¿Quieres registrar un juego? - <a href="{{ route('regisGames') }}">IR...</a></strong>
-        @vite('resources/css/style.css')
-
+       <strong>
+        <a href="{{route('logout')}}">Cerrar Sesion</a>
+        </strong> 
+    </div>
+        
         <h1>Lista de Juegos</h1>
         <div class="cartaJuegos">
             @foreach ($juegos as $item)

@@ -49,7 +49,7 @@ class UserController extends Controller
         if (Auth::attempt($credential)) {
             $request->session()->regenerate();
 
-
+            $user = Auth::id();
             return redirect()->route('juegos')->with('success' , 'Haz Iniciado sesion correctamente 🎁😁');
         }
         return back()->withErrors([
@@ -131,5 +131,13 @@ class UserController extends Controller
         $juego->save();
     return redirect()->route('juegos');
 }
+    public function session(){
+        return view('sesion');
+    }
+
+    public function logout(){
+        Auth::logout();
+        return view("sesion");
+    }
 
 }

@@ -102,3 +102,25 @@
 #flex a:nth-child(2){
    margin-top: 22px;
 }
+
+.logout{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px 30px;
+    box-sizing: border-box;
+}
+.logout strong:nth-child(2) a{
+    text-decoration: none;
+    background-color: red;
+    color: rgb(255, 255, 255);
+    padding: 3px 7px;
+    border: 0.8px solid black;
+    border-radius: 8px;
+    font-family: Arial, Helvetica, sans-serif;
+    transition: all 0.2s;
+}
+.logout strong:nth-child(2) a:hover{
+    opacity: 0.8;
+    padding: 4px 8px;
+}

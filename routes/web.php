@@ -17,20 +17,26 @@ use Illuminate\Support\Facades\Route;
 
 Route::get('/', [UserController::class, 'animation']);
 
-Route::post('/Login', [UserController::class, 'login'])->name('login');
+Route::post('Login', [UserController::class, 'login'])->name('session');
 
-Route::get('/Registro', [UserController::class, 'pagRegis'])->name('pagRegis');
+Route::get('Registro', [UserController::class, 'pagRegis'])->name('pagRegis');
+
 Route::post('/Registro', [UserController::class, 'registro'])->name('registro');
 
-Route::get('/Juegos', [UserController::class, 'show'])->name('juegos');
+Route::get('Juegos', [UserController::class, 'show'])->name('juegos')->middleware('auth');
 
-Route::get('/infoGames/{item}', [UserController::class, 'infoGames'])->name('infoGames');
+Route::get('Iniciar sesion', [UserController::class, 'session'])->name('login')->middleware('guest');
 
-Route::get('/eliminando/{juegos}', [UserController::class, 'destroy'])->name('destroy');
+Route::get('infoGames/{item}', [UserController::class, 'infoGames'])->name('infoGames')->middleware('auth');
 
-Route::get('/Registrar Juegos', [UserController::class, 'regisGames'])->name('regisGames');
+Route::get('eliminando/{juegos}', [UserController::class, 'destroy'])->name('destroy')->middleware('auth');
 
-Route::get("Actualizar Registro/{user}/edit", [UserController::class, "edit"])->name("actualizar");
+Route::get('Registrar Juegos', [UserController::class, 'regisGames'])->name('regisGames')->middleware('auth');
+
+Route::get("Actualizar Registro/{user}/edit", [UserController::class, "edit"])->name("actualizar")->middleware('auth');
+
 Route::put("Actualizar Registro/{user}/edit", [UserController::class, "update"])->name("update");
 
-Route::resource('/Pagina|Principal',UserController::class);
+Route::get("Cerrando Sesion", [UserController::class, "logout"])->name("logout");
+
+Route::resource('Pagina|Principal',UserController::class);
