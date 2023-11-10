@@ -8,7 +8,8 @@
 body{
   font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
   background-color: rgb(8, 6, 6);
- 
+
+
 }
 img{
     max-width: 100%;
@@ -22,6 +23,10 @@ img{
 .popular{
     padding: 60px 0px;
     text-align: center;
+    overflow: hidden;
+}
+.popular  img{
+    object-fit: cover;
 }
 h2 {
     color: white;
@@ -32,7 +37,7 @@ h2 {
     display: flex;
     justify-content: space-between;
     margin: 30px;
-    
+    overflow-x: scroll;
 }
 .popular-content  img{
     width: 130px;
@@ -42,7 +47,7 @@ h2 {
     grid-template-columns: repeat(3,1fr);
     gap: 50px;
 }.product-1{
-    
+
     background-color: rgb(231, 226, 226);
 }
 .product-txt{
@@ -53,13 +58,7 @@ h1{
     color: rgb(15, 15, 15);
     margin-bottom: 20px;
 }
-.price{
-   
-    
-    
-    width: 340px;
-    height: 240px;
-}.price p{
+.price p{
     font-size: 15px;
     color: black;
 }

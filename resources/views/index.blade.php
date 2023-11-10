@@ -1,6 +1,6 @@
 @extends('layouts/until')
 
-@section('content') 
+@section('content')
 
 @vite('resources/css/principal.css')
 
@@ -33,10 +33,10 @@
                         <h1>Super Mario</h1>
                         <p> Año : 1985</p>
                         <p> Categoria: Aventura</p>
-                        <p> Descripcion: es un videojuego de plataformas, <br>diseñado por Shigeru Miyamoto, <br> lanzado el
+                        <p> Descripcion: es un videojuego de plataformas,diseñado por Shigeru Miyamoto,  lanzado el
                             13 de septiembre
-                            <br> de 1985 y producido por la empresa <br>
-                            japonesa Nintendo, para la consola Nintendo <br>
+                            de 1985 y producido por la empresa
+                            japonesa Nintendo, para la consola Nintendo
                             Entertainment System.
                         </p>
                     </div>
