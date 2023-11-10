@@ -32,6 +32,7 @@ h2 {
     display: flex;
     justify-content: space-between;
     margin: 30px;
+    overflow: hidden;
     
 }
 .popular-content  img{
@@ -53,10 +54,7 @@ h1{
     color: rgb(15, 15, 15);
     margin-bottom: 20px;
 }
-.price{
-   
-    
-    
+.price{ 
     width: 340px;
     height: 240px;
 }.price p{
@@ -64,6 +62,16 @@ h1{
     color: black;
 }
 .popular-content img{
-    width: 200px;
-    height: 200px;
+    width: 400px;
+
+    
+    
+}
+.popular-content ul{
+    display: flex;
+    animation: cambio 20s infinite alternate linear;
+}
+.popular-content li{
+    width: 100%;
+    list-style: none;
 }
