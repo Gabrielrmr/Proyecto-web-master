@@ -1,9 +1,9 @@
-body{
+.fondoImage{
     background-image: url('/public/images/FondoPagina.png');
     background-position: center;
     background-size: cover;
     background-repeat: no-repeat;
-
+    height: 98vh;
 }
 
 .loading{

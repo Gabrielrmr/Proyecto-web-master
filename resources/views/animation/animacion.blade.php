@@ -8,12 +8,13 @@
 <body>
     @vite('resources/css/loanding.css')
     @vite('resources/js/loading.js')
-
-        <div class="loading">
-            <div class="circle"></div>
-            <p id="load">Cargando<span id="punto"></span></p>
-        </div>
+<div class="fondoImage">
+    <div class="loading">
+        <div class="circle"></div>
+        <p id="load">Cargando<span id="punto"></span></p>
     </div>
+</div>
+</div>
 </body>
 </html>
 
